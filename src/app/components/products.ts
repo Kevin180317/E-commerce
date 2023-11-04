@@ -2,32 +2,32 @@
 
 const products = [
   {
-    id: "Hoodie", // Cambia "id" a un valor único para cada producto
-    title: "Hoodie",
+    id: "product1", // Cambia "id" a un valor único para cada producto
+    title: "product1",
     price: "€36.50",
-    image: "/1.webp",
-    link: "/products/Hoodie", // Cambia "/pages/products/[id]" a "/pages/products/Hoodie"
+    image: "/producto1.jpg",
+    link: "/products/product1", // Cambia "/pages/products/[id]" a "/pages/products/Hoodie"
   },
   {
-    id: "T-Shirt",
-    title: "T-Shirt",
+    id: "product2",
+    title: "product2",
     price: "€19.50",
-    image: "/3.webp",
-    link: "/products/T-Shirt",
+    image: "/producto2.jpg",
+    link: "/products/product2",
   },
   {
-    id: "Tote-Bag",
-    title: "Tote Bag",
+    id: "product3",
+    title: "product3",
     price: "€18.00",
-    image: "/3.webp",
-    link: "/products/Tote-Bag",
+    image: "/producto5.jpg",
+    link: "/products/product3",
   },
   {
-    id: "Tote-Bag2",
-    title: "Tote Bag",
+    id: "product4",
+    title: "product4",
     price: "€18.00",
-    image: "/4.webp",
-    link: "/products/Tote-Bag2",
+    image: "/producto3.jpg",
+    link: "/products/product4",
   },
 ];
 

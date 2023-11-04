@@ -3,27 +3,70 @@ import React from "react";
 import { useParams } from "next/navigation";
 import products from "@/app/components/products";
 import Image from "next/image";
+import { Tabs, Tab, Card, CardBody, CardHeader } from "@nextui-org/react";
 
 const ProductPage: React.FC = () => {
   const { id } = useParams();
 
-  // Buscar el producto correspondiente al id en la URL
+  const btnSize = ["XS", "S", "M", "L", "XL"];
+  let tabs = [
+    {
+      id: "photos",
+      label: "PRODUCTION INFORMARION",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    },
+    {
+      id: "music",
+      label: "SHIPPING & RETURNS",
+      content:
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    },
+  ];
   const selectedProduct = products.find((product) => product.id === id);
 
   return (
     <div>
       {selectedProduct ? (
         <>
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="flex-1 px-32 py-8">
+          <div className="flex flex-col md:flex-row items-center h-screen">
+            <div className="flex-1 py-8 px-32">
               {" "}
-              <Image src={selectedProduct.image} alt={selectedProduct.title} height={400} width={550} />
+              <Image
+                src={selectedProduct.image}
+                alt={selectedProduct.title}
+                className="rounded-2xl"
+                height={400}
+                width={550}
+              />
             </div>
-            <div className="flex-1">
-              <h1>Detalles del producto</h1>
-              <p>ID del producto: {selectedProduct.id}</p>
-              <h2>Título: {selectedProduct.title}</h2>
-              <p>Precio: {selectedProduct.price}</p>
+            <div className="flex-1 px-8">
+              <h1 className="text-5xl">{selectedProduct.title}</h1>
+              <p className="flex justify-start py-8">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consequatur, voluptatem?
+              </p>
+              <span className="font-bold text-xl">Select size</span>
+              <div className="flex py-4 gap-4">
+                {btnSize.map((size) => (
+                  <button className="border p-4 hover:bg-white hover:text-black">
+                    {size}
+                  </button>
+                ))}
+              </div>
+              <p className="text-2xl">{selectedProduct.price}</p>
+              <button className="border mt-4 w-80 p-4 hover:bg-white hover:text-black">
+                Add to card
+              </button>
+              <div className="py-2">
+                <Tabs aria-label="Dynamic tabs" items={tabs}>
+                  {(item) => (
+                    <Tab key={item.id} title={item.label}>
+                      <p className="p">{item.content}</p>
+                    </Tab>
+                  )}
+                </Tabs>
+              </div>
             </div>
           </div>
         </>
