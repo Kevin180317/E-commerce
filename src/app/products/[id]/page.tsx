@@ -48,8 +48,8 @@ const ProductPage: React.FC = () => {
               </p>
               <span className="font-bold text-xl">Select size</span>
               <div className="flex py-4 gap-4">
-                {btnSize.map((size) => (
-                  <button className="border p-4 hover:bg-white hover:text-black">
+                {btnSize.map((size, id) => (
+                  <button key={id} className="border p-4 hover:bg-white hover:text-black">
                     {size}
                   </button>
                 ))}
