@@ -3,7 +3,7 @@ import React from "react";
 import { useParams } from "next/navigation";
 import products from "@/app/components/products";
 import Image from "next/image";
-import { Tabs, Tab, Card, CardBody, CardHeader } from "@nextui-org/react";
+import { Tabs, Tab } from "@nextui-org/react";
 
 const ProductPage: React.FC = () => {
   const { id } = useParams();
