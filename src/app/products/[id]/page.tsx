@@ -3,7 +3,7 @@ import React from "react";
 import { useParams } from "next/navigation";
 import products from "@/app/components/products";
 import Image from "next/image";
-import { Tabs, Tab } from "@nextui-org/react";
+import { Tabs, Tab } from "@heroui/tabs";
 
 const ProductPage: React.FC = () => {
   const { id } = useParams();
@@ -49,7 +49,10 @@ const ProductPage: React.FC = () => {
               <span className="font-bold text-xl">Select size</span>
               <div className="flex py-4 gap-4">
                 {btnSize.map((size, id) => (
-                  <button key={id} className="border p-4 hover:bg-white hover:text-black">
+                  <button
+                    key={id}
+                    className="border p-4 hover:bg-white hover:text-black"
+                  >
                     {size}
                   </button>
                 ))}

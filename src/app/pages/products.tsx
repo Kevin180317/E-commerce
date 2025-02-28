@@ -2,7 +2,9 @@
 import React from "react";
 import Link from "next/link";
 import products from "@/app/components/products";
-import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
+import { Card, CardBody, CardFooter } from "@heroui/card";
+import { Image } from "@heroui/image";
+
 import { FaArrowRight } from "react-icons/fa";
 const Products = () => {
   return (
@@ -21,17 +23,15 @@ const Products = () => {
       </Link>
       <div className="grid grid-cols-2 px-8 py-4 md:grid-cols-4 gap-8">
         {products.map((product, id) => (
-          <Card className="py-4"
-            key={id}
-          >
+          <Card className="py-4" key={id}>
             <CardBody className="overflow-visible py-2">
               <Link href={product.link}>
                 <Image
                   isZoomed
                   alt={product.title}
                   src={product.image}
-                  height={750}
-                  width={750}
+                  height={350}
+                  width={350}
                 />
               </Link>
             </CardBody>
