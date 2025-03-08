@@ -13,17 +13,20 @@ function Hero() {
             className="w-auto h-screen "
           />
         </div>
-        <div className="absolute h-screen flex flex-col items-center justify-center container mx-auto">
-          <h1 className="text-4xl text-black">
+        <div className="absolute h-screen flex flex-col items-baseline justify-center container mx-64 max-w-6xl gap-8">
+          <h1 className="text-6xl text-slate-700 font-bold ">
             Medicia Medical Service and Woocommerce
           </h1>
-          <p>
+          <p className="text-2xl max-w-3xl text-slate-700 pb-10">
             Medicia as always focused on the best treatments with affordable
             price through the best medical services
           </p>
-          <a href="" className="p-4 bg-emerald-400">
+          <Link
+            href=""
+            className="p-4 bg-emerald-400 rounded-xl text-xl font-semibold"
+          >
             Shop Now
-          </a>
+          </Link>
         </div>
       </div>
     </section>
