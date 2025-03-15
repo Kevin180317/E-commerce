@@ -9,7 +9,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { div, section } from "motion/react-client";
 const Products = () => {
   return (
-    <section className="flex flex-col items-center justify-center">
+    <section className="flex flex-col items-center justify-center p-8">
       <h1 className="text-slate-700 text-3xl font-bold pb-6">
         Popular Products
       </h1>
@@ -31,26 +31,15 @@ const Products = () => {
               <h2 className="text-slate-700 font-semibold">{product.title}</h2>
               <p className="text-emerald-400 font-semibold">{product.price}</p>
             </div>
-          ) : // <Card className="py-4" key={id}>
-          //   <CardBody className="overflow-visible py-2">
-          //     <Link href={product.link}>
-          //       <Image
-          //         isZoomed
-          //         alt={product.title}
-          //         src={product.image}
-          //         height={230}
-          //         width={230}
-          //       />
-          //     </Link>
-          //   </CardBody>
-          //   <CardFooter className="pb-0 pt-2 gap-4 px-6 flex flex-col items-start">
-          //     <h2>{product.title}</h2>
-          //     <p>{product.price}</p>
-          //   </CardFooter>
-          // </Card>
-          null
+          ) : null
         )}
       </div>
+      <Link
+        href=""
+        className="p-4 bg-emerald-400 rounded-xl text-lg hover:bg-emerald-700"
+      >
+        View All
+      </Link>
     </section>
   );
 };
