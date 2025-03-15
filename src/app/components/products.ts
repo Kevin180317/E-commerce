@@ -3,31 +3,107 @@
 const products = [
   {
     id: "product1", // Cambia "id" a un valor único para cada producto
-    title: "product1",
+    title: "Digital Infrared Thermometer",
     price: "€36.50",
-    image: "/producto1.jpg",
+    image: "/product1.jpg",
     link: "/products/product1", // Cambia "/pages/products/[id]" a "/pages/products/Hoodie"
+    popular: false,
   },
   {
     id: "product2",
-    title: "product2",
+    title: "Clinical Stethoscope Dual Head",
     price: "€19.50",
-    image: "/producto2.jpg",
+    image:
+      "https://www.marveltheme.com/tf/html/medicia/assets/images/product/img_2.jpg",
     link: "/products/product2",
+    popular: true,
   },
   {
     id: "product3",
-    title: "product3",
+    title: "Digital Thermometer",
     price: "€18.00",
     image: "/producto5.jpg",
     link: "/products/product3",
+    popular: false,
   },
   {
     id: "product4",
-    title: "product4",
+    title: "First Medicine Aid Kit",
+    price: "€18.00",
+    image:
+      "https://www.marveltheme.com/tf/html/medicia/assets/images/product/img_5.jpg",
+    link: "/products/product4",
+    popular: true,
+  },
+  {
+    id: "product5",
+    title: "Digital Blood Pressure Machine",
     price: "€18.00",
     image: "/producto3.jpg",
     link: "/products/product4",
+    popular: false,
+  },
+  {
+    id: "product6",
+    title: "Surgical Face Mask",
+    price: "€18.00",
+    image:
+      "https://www.marveltheme.com/tf/html/medicia/assets/images/product/img_7.jpg",
+    link: "/products/product4",
+    popular: true,
+  },
+  {
+    id: "product7",
+    title: "Aloevera Food Supliment",
+    price: "€18.00",
+    image:
+      "https://www.marveltheme.com/tf/html/medicia/assets/images/product/img_4.jpg",
+    link: "/products/product4",
+    popular: true,
+  },
+  {
+    id: "product8",
+    title: "Digital Temparature meter",
+    price: "€18.00",
+    image:
+      "https://www.marveltheme.com/tf/html/medicia/assets/images/product/img_3.jpg",
+    link: "/products/product4",
+    popular: true,
+  },
+  {
+    id: "product9",
+    title: "Digital Thermometer",
+    price: "€18.00",
+    image: "/producto3.jpg",
+    link: "/products/product4",
+    popular: false,
+  },
+  {
+    id: "product10",
+    title: "Digital Temparature meter",
+    price: "€18.00",
+    image:
+      "https://www.marveltheme.com/tf/html/medicia/assets/images/product/img_6.jpg",
+    link: "/products/product4",
+    popular: true,
+  },
+  {
+    id: "product11",
+    title: "First Medicine Aid Kit",
+    price: "€18.00",
+    image:
+      "https://www.marveltheme.com/tf/html/medicia/assets/images/product/img_8.jpg",
+    link: "/products/product4",
+    popular: true,
+  },
+  {
+    id: "product12",
+    title: "Surgical Hand Gloves",
+    price: "€18.00",
+    image:
+      "https://www.marveltheme.com/tf/html/medicia/assets/images/product/img_1.jpg",
+    link: "/products/product4",
+    popular: true,
   },
 ];
 

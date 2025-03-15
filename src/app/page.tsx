@@ -5,7 +5,7 @@ import Offers from "./pages/offers";
 
 function page() {
   return (
-    <div>
+    <div className="bg-slate-200 ">
       <Hero />
       <Offers />
       <Products />

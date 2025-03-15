@@ -1,65 +1,93 @@
 import { div } from "motion/react-client";
 import React from "react";
+import Link from "next/link";
 
 function Offers() {
   return (
-    <div className="w-screen h-screen bg-slate-200">
-      <div className="container mx-64 flex items-center justify-center">
-        <div className="grid grid-cols-5 grid-rows-5 text-black gap-8 h-full w-full">
-          <div className="row-span-2 relative">
+    <section className="w-screen h-screen bg-slate-200">
+      <div className="px-64 flex flex-col items-center justify-center h-full">
+        <div className="grid grid-cols-3 grid-rows-2 gap-8">
+          <div className="row-span-2 relative hover:scale-110 transition-transform duration-500 ease-in-out">
             <img
               src="https://www.marveltheme.com/tf/html/medicia/assets/images/promotion/img_1.jpg"
               alt=""
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover "
             />
-            <div className="absolute inset-0">
-              <h1 className="text-5xl font-bold text-emerald-400">50% OFF</h1>
-              <p className="text-4xl font-semibold text-slate-700">
+            <div className="flex flex-col items-end absolute bottom-16 right-6">
+              <h1 className="text-4xl font-bold text-emerald-400">50% OFF</h1>
+              <p className="text-3xl font-semibold text-slate-700 pb-8">
                 For First Purchase
               </p>
+              <Link
+                href=""
+                className="p-4 bg-emerald-400 rounded-xl text-lg font-semibold hover:bg-emerald-700"
+              >
+                Shop Now
+              </Link>
             </div>
           </div>
-          <div className="col-span-2 relative">
+          <div className="col-span-2 relative hover:scale-110 transition-transform duration-500 ease-in-out">
             <img
               src="https://www.marveltheme.com/tf/html/medicia/assets/images/promotion/img_2.jpg"
               alt=""
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0">
-              <h1 className="text-5xl font-bold text-emerald-400">50% OFF</h1>
-              <p className="text-4xl font-semibold text-slate-700">
+            <div className="absolute top-1/3 left-8">
+              <h1 className="text-4xl font-bold text-emerald-400">50% OFF</h1>
+              <p className="text-3xl font-semibold text-slate-700 max-w-96 pb-4">
                 Digital Electronic Stethoscope
               </p>
+              <Link
+                href=""
+                className=" text-slate-700 rounded-xl text-lg font-semibold underline underline-offset-8 hover:text-emerald-400"
+              >
+                Visit Store
+              </Link>
             </div>
           </div>
-          <div className="col-start-2 row-start-2 relative">
+          <div className="col-start-2 row-start-2 relative hover:scale-110 transition-transform duration-500 ease-in-out">
             <img
               src="https://www.marveltheme.com/tf/html/medicia/assets/images/promotion/img_3.jpg"
               alt=""
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0">
-              <p className="text-4xl font-semibold text-slate-700">
-                Get Digital Thermometer
+            <div className="flex flex-col items-end absolute bottom-16 right-6">
+              <p className="text-2xl font-semibold text-slate-700">
+                Get Digital
               </p>
+              <p className="text-2xl font-semibold text-slate-700">
+                Thermometer
+              </p>
+              <Link
+                href=""
+                className=" text-slate-700 rounded-xl text-lg font-semibold pt-4 underline underline-offset-8 hover:text-emerald-400"
+              >
+                Visit Store
+              </Link>
             </div>
           </div>
-          <div className="col-start-3 row-start-2 relative">
+          <div className="col-start-3 row-start-2 relative hover:scale-110 transition-transform duration-500 ease-in-out">
             <img
               src="https://www.marveltheme.com/tf/html/medicia/assets/images/promotion/img_4.jpg"
               alt=""
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0">
+            <div className="absolute px-7 inset-0 py-8">
               <p className="text-emerald-400">Medical Supplies</p>
-              <p className="text-4xl font-semibold text-slate-700">
+              <p className="text-2xl font-semibold text-slate-700 pb-4">
                 Coronavirus Medical Supplies
               </p>
+              <Link
+                href=""
+                className=" text-slate-700 rounded-xl text-lg font-semibold underline underline-offset-8 hover:text-emerald-400"
+              >
+                Shop Now
+              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
