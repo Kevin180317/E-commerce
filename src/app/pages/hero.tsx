@@ -15,7 +15,7 @@ function Hero() {
         </div>
         <div className="absolute h-screen flex flex-col items-baseline justify-center mx-64 max-w-2xl gap-8">
           <h1 className="text-5xl text-slate-700 font-bold ">
-            Medicia Medical Service and Woocommerce
+            Medicia Medical Service
           </h1>
           <p className="text-lg max-w-3xl text-slate-700 pb-10">
             Medicia as always focused on the best treatments with affordable

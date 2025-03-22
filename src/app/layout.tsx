@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/app/providers";
+import Footer from "./pages/footer";
+import Header from "./pages/header";
 const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -15,10 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="overflow-x-hidden ">
-      <body className={inter.className}>
+    <html lang="en">
+      <Header />
+      <body className={inter.className} overflow-x-hidden bg-slate-200>
         <Providers>{children}</Providers>
       </body>
+      <Footer />
     </html>
   );
 }
