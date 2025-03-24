@@ -7,11 +7,11 @@ function Offers() {
     <section className="w-screen h-screen bg-slate-200">
       <div className="px-64 flex flex-col items-center justify-center h-full">
         <div className="grid grid-cols-3 grid-rows-2 gap-8">
-          <div className="row-span-2 relative hover:scale-110 transition-transform duration-500 ease-in-out">
+          <div className="row-span-2 relative overflow-hidden">
             <img
               src="https://www.marveltheme.com/tf/html/medicia/assets/images/promotion/img_1.jpg"
               alt=""
-              className="w-full h-full object-cover "
+              className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
             />
             <div className="flex flex-col items-end absolute bottom-16 right-6">
               <h1 className="text-4xl font-bold text-emerald-400">50% OFF</h1>
@@ -26,11 +26,12 @@ function Offers() {
               </Link>
             </div>
           </div>
-          <div className="col-span-2 relative hover:scale-110 transition-transform duration-500 ease-in-out">
+
+          <div className="col-span-2 relative overflow-hidden ">
             <img
               src="https://www.marveltheme.com/tf/html/medicia/assets/images/promotion/img_2.jpg"
               alt=""
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
             />
             <div className="absolute top-1/3 left-8">
               <h1 className="text-4xl font-bold text-emerald-400">50% OFF</h1>
@@ -45,11 +46,11 @@ function Offers() {
               </Link>
             </div>
           </div>
-          <div className="col-start-2 row-start-2 relative hover:scale-110 transition-transform duration-500 ease-in-out">
+          <div className="col-start-2 row-start-2 relative overflow-hidden">
             <img
               src="https://www.marveltheme.com/tf/html/medicia/assets/images/promotion/img_3.jpg"
               alt=""
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
             />
             <div className="flex flex-col items-end absolute bottom-16 right-6">
               <p className="text-2xl font-semibold text-slate-700">
@@ -66,13 +67,13 @@ function Offers() {
               </Link>
             </div>
           </div>
-          <div className="col-start-3 row-start-2 relative hover:scale-110 transition-transform duration-500 ease-in-out">
+          <div className="col-start-3 row-start-2 relative overflow-hidden">
             <img
               src="https://www.marveltheme.com/tf/html/medicia/assets/images/promotion/img_4.jpg"
               alt=""
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
             />
-            <div className="absolute px-7 inset-0 py-8">
+            <div className="absolute px-7 top-2 py-8">
               <p className="text-emerald-400">Medical Supplies</p>
               <p className="text-2xl font-semibold text-slate-700 pb-4">
                 Coronavirus Medical Supplies
