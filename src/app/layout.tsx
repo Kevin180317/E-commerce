@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Header />
-      <body className={inter.className} overflow-x-hidden bg-slate-200>
+      <body className={inter.className}>
         <Providers>{children}</Providers>
       </body>
       <Footer />
