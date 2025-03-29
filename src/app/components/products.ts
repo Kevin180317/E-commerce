@@ -1,8 +1,8 @@
 // productsData.ts
 
-const products = [
+const listProducts = [
   {
-    id: "product1", // Cambia "id" a un valor único para cada producto
+    id: "1", // Cambia "id" a un valor único para cada producto
     title: "Digital Infrared Thermometer",
     price: "€36.50",
     image: "/product1.jpg",
@@ -10,7 +10,7 @@ const products = [
     popular: false,
   },
   {
-    id: "product2",
+    id: "2",
     title: "Clinical Stethoscope Dual Head",
     price: "€19.50",
     image:
@@ -19,7 +19,7 @@ const products = [
     popular: true,
   },
   {
-    id: "product3",
+    id: "3",
     title: "Digital Thermometer",
     price: "€18.00",
     image: "/producto5.jpg",
@@ -27,7 +27,7 @@ const products = [
     popular: false,
   },
   {
-    id: "product4",
+    id: "4",
     title: "First Medicine Aid Kit",
     price: "€18.00",
     image:
@@ -36,7 +36,7 @@ const products = [
     popular: true,
   },
   {
-    id: "product5",
+    id: "5",
     title: "Digital Blood Pressure Machine",
     price: "€18.00",
     image: "/producto3.jpg",
@@ -44,7 +44,7 @@ const products = [
     popular: false,
   },
   {
-    id: "product6",
+    id: "6",
     title: "Surgical Face Mask",
     price: "€18.00",
     image:
@@ -53,7 +53,7 @@ const products = [
     popular: true,
   },
   {
-    id: "product7",
+    id: "7",
     title: "Aloevera Food Supliment",
     price: "€18.00",
     image:
@@ -62,7 +62,7 @@ const products = [
     popular: true,
   },
   {
-    id: "product8",
+    id: "8",
     title: "Digital Temparature meter",
     price: "€18.00",
     image:
@@ -71,7 +71,7 @@ const products = [
     popular: true,
   },
   {
-    id: "product9",
+    id: "9",
     title: "Digital Thermometer",
     price: "€18.00",
     image: "/producto3.jpg",
@@ -79,7 +79,7 @@ const products = [
     popular: false,
   },
   {
-    id: "product10",
+    id: "10",
     title: "Digital Temparature meter",
     price: "€18.00",
     image:
@@ -88,7 +88,7 @@ const products = [
     popular: true,
   },
   {
-    id: "product11",
+    id: "11",
     title: "First Medicine Aid Kit",
     price: "€18.00",
     image:
@@ -97,7 +97,7 @@ const products = [
     popular: true,
   },
   {
-    id: "product12",
+    id: "12",
     title: "Surgical Hand Gloves",
     price: "€18.00",
     image:
@@ -107,4 +107,4 @@ const products = [
   },
 ];
 
-export default products;
+export default listProducts;
