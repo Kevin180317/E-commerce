@@ -44,7 +44,7 @@ const Products = ({
         Shopping Over $59 or first purchase you will get 100% free shipping
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 px-8 py-4 gap-8 w-full h-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 py-4 gap-10 w-full h-auto">
         {listProducts.map((product) =>
           product.popular ? (
             <div

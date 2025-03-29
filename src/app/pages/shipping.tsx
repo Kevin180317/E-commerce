@@ -2,9 +2,9 @@ import React from "react";
 
 function Shipping() {
   return (
-    <section className="flex flex-col text-slate-700 items-center justify-center px-16 md:px-80 py-8">
-      <div className="md:flex">
-        <div className="flex items-center justify-start gap-6 p-8 max-w-96">
+    <section className="flex flex-col text-slate-700">
+      <div className="md:flex justify-between md:px-64 py-8 gap-8">
+        <div className="flex items-center justify-start gap-6 max-w-96">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -28,7 +28,7 @@ function Shipping() {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-6 p-8 max-w-96">
+        <div className="flex items-center justify-center gap-6 max-w-96">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -50,7 +50,7 @@ function Shipping() {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-6 p-8 max-w-96">
+        <div className="flex items-center justify-center gap-6 max-w-96">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
