@@ -4,16 +4,16 @@ import React from "react";
 
 function Hero() {
   return (
-    <section className="h-screen w-screen ">
-      <div className="relative">
-        <div className="absolute inset-0">
+    <section className="h-screen w-auto">
+      <div className="relative flex">
+        <div className="">
           <img
             src="/bgHero.jpg"
             alt="background"
-            className="w-screen h-screen "
+            className="w-full h-screen object-cover"
           />
         </div>
-        <div className="absolute h-screen flex flex-col items-baseline justify-center ml-80 max-w-2xl gap-8">
+        <div className="absolute w-auto h-screen flex flex-col items-center md:items-baseline justify-center mx-16 lg:mx-32 xl:mx-80 md:max-w-md lg:max-w-2xl gap-8">
           <h1 className="text-5xl text-slate-700 font-bold ">
             Medicia Medical Service
           </h1>
@@ -23,7 +23,7 @@ function Hero() {
           </p>
           <Link
             href=""
-            className="p-4 bg-emerald-400 rounded-xl text-xl font-semibold hover:bg-emerald-700 hover:scale-110 transition-transform duration-500 ease-in-out"
+            className="p-4 flex justify-center bg-emerald-400 rounded-xl text-xl w-36 font-semibold hover:bg-emerald-700 hover:scale-110 transition-transform duration-500 ease-in-out"
           >
             Shop Now
           </Link>

@@ -5,7 +5,7 @@ import Link from "next/link";
 function Offers() {
   return (
     <section className="w-screen h-screen bg-slate-200">
-      <div className="px-80 flex flex-col items-center justify-center h-full">
+      <div className="md:px-80 flex flex-col items-center justify-center h-full">
         <div className="grid grid-cols-3 grid-rows-2 gap-8 w-full h-auto">
           <div className="row-span-2 relative overflow-hidden">
             <img

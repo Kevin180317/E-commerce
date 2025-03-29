@@ -4,8 +4,8 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <section className="flex flex-col items-center justify-center p-8 gap-16 text-slate-700 bg-slate-200">
-      <div className="flex items-start justify-between w-full max-w-4xl gap-4">
+    <section className="flex flex-col items-center justify-center md:px-80 py-8 gap-16 text-slate-700 bg-slate-200">
+      <div className="md:flex items-start justify-between w-full gap-4">
         <div className="flex flex-col max-w-sm gap-4">
           <img
             src="https://www.marveltheme.com/tf/html/medicia/assets/images/logo/medicia_2.png"
