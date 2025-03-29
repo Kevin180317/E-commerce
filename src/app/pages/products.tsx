@@ -1,13 +1,40 @@
 "use client";
-import React from "react";
-import Link from "next/link";
-import products from "@/app/components/products";
-import { Card, CardBody, CardFooter } from "@heroui/card";
-import { Image } from "@heroui/image";
 
-import { FaArrowRight } from "react-icons/fa";
-import { div, section } from "motion/react-client";
-const Products = () => {
+import React, { useState } from "react";
+import listProducts from "@/app/components/products"; // Importamos la lista de productos
+
+interface Product {
+  id: string;
+  title: string;
+  price: string;
+  image: string;
+  link: string;
+  popular: boolean;
+}
+
+const Products = ({
+  onAddToCart,
+}: {
+  onAddToCart: (product: Product, quantity: number) => void;
+}) => {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null); // Producto seleccionado
+  const [quantity, setQuantity] = useState(1); // Cantidad seleccionada
+
+  const handleSelectProduct = (product: Product) => {
+    setSelectedProduct(product); // Establecer el producto seleccionado para mostrar detalles
+  };
+
+  const handleQuantityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setQuantity(Number(e.target.value)); // Actualizamos la cantidad seleccionada
+  };
+
+  const handleAddToCart = () => {
+    if (selectedProduct) {
+      onAddToCart(selectedProduct, quantity); // Agregamos el producto con la cantidad seleccionada al carrito
+      setSelectedProduct(null); // Cerramos el detalle del producto
+    }
+  };
+
   return (
     <section className="flex flex-col items-center justify-center px-64 py-8">
       <h1 className="text-slate-700 text-3xl font-bold pb-6">
@@ -16,72 +43,89 @@ const Products = () => {
       <p className="text-slate-700 mb-8">
         Shopping Over $59 or first purchase you will get 100% free shipping
       </p>
-      <div className="grid grid-cols-4 px-8 py-4 gap-8 w-full h-auto">
-        {products.map((product, id) =>
+
+      <div className="grid grid-cols-1 md:grid-cols-4 px-8 py-4 gap-8 w-full h-auto">
+        {listProducts.map((product) =>
           product.popular ? (
             <div
-              key={id}
-              className="flex flex-col items-center justify-center gap-6"
+              key={product.id}
+              className="flex flex-col items-center justify-center gap-6 overflow-hidden relative cursor-pointer"
             >
-              <Link href="">
-                <img
-                  src={product.image}
-                  alt=""
-                  className="w-[250] h-[250] object-cover transition-transform duration-500 ease-in-out hover:scale-110"
-                />
-              </Link>
+              <img
+                src={product.image}
+                alt={product.title}
+                className="w-[250px] h-[250px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+              />
               <h2 className="text-slate-700 font-semibold">{product.title}</h2>
               <p className="text-emerald-400 font-semibold">{product.price}</p>
+
+              {/* Botón para seleccionar el producto */}
+              <button
+                onClick={() => handleSelectProduct(product)} // Al hacer click, seleccionamos el producto
+                className="mt-4 bg-emerald-500 text-white py-2 px-6 rounded-md hover:bg-emerald-600 transition"
+              >
+                Select Product
+              </button>
             </div>
           ) : null
         )}
       </div>
-      <Link
-        href=""
-        className="p-4 bg-emerald-400 rounded-xl text-lg hover:bg-emerald-700"
-      >
-        View All
-      </Link>
+
+      {/* Si un producto está seleccionado, mostramos los detalles */}
+      {selectedProduct && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <h2 className="text-slate-700 text-xl font-bold">
+              {selectedProduct.title}
+            </h2>
+            <img
+              src={selectedProduct.image}
+              alt={selectedProduct.title}
+              className="w-full h-[250px] object-cover mt-4"
+            />
+            <p className="text-emerald-400 font-semibold mt-4">
+              {selectedProduct.price}
+            </p>
+
+            {/* Select para elegir cantidad */}
+            <div className="mt-4">
+              <label htmlFor="quantity" className="block text-slate-700">
+                Quantity
+              </label>
+              <select
+                id="quantity"
+                value={quantity}
+                onChange={handleQuantityChange}
+                className="mt-2 w-full bg-slate-100 text-black py-2 px-4 rounded-md border border-slate-300"
+              >
+                {[1, 2, 3, 4, 5].map((qty) => (
+                  <option key={qty} value={qty}>
+                    {qty}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex gap-4 items-center">
+              <button
+                onClick={handleAddToCart}
+                className="mt-6 bg-emerald-500 text-white py-2 px-6 rounded-md hover:bg-emerald-600 transition"
+              >
+                Add to Cart
+              </button>
+
+              <button
+                onClick={() => setSelectedProduct(null)}
+                className="mt-6 bg-red-500 text-white py-2 px-6 rounded-md hover:bg-red-600 transition"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
 
 export default Products;
-
-{
-  /* <div className="py-4">
-      <h1 className="text-center text-4xl">Productos</h1>
-      <p className="text-2xl p-4 text-center">
-        Our newest styles are here to help you look your best.
-      </p>
-      <Link className="underline text-center" href="/products/">
-        <p className="text-base">
-          Explore products
-          <span>
-            <FaArrowRight className="inline-block ml-2" />
-          </span>
-        </p>
-      </Link>
-      <div className="grid grid-cols-2 px-8 py-4 md:grid-cols-4 gap-8">
-        {products.map((product, id) => (
-          <Card className="py-4" key={id}>
-            <CardBody className="overflow-visible py-2">
-              <Link href={product.link}>
-                <Image
-                  isZoomed
-                  alt={product.title}
-                  src={product.image}
-                  height={350}
-                  width={350}
-                />
-              </Link>
-            </CardBody>
-            <CardFooter className="pb-0 pt-2 gap-4 px-6 flex flex-col items-start">
-              <h2>{product.title}</h2>
-              <p>{product.price}</p>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
-    </div> */
-}

@@ -1,12 +1,17 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { FaShoppingCart, FaBars } from "react-icons/fa";
+import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
-function Header() {
+function Header({
+  cartCount,
+  onCartClick,
+}: {
+  cartCount: number;
+  onCartClick: () => void;
+}) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(3);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const menuItems = ["Home", "Products", "Offers", "Shipping"];
@@ -33,7 +38,6 @@ function Header() {
       }`}
     >
       <div className="max-w-6xl mx-auto py-4 px-6 flex items-center justify-between">
-        {/* Logo */}
         <h1
           className={`text-2xl font-bold transition-colors duration-300 ${
             isScrolled ? "text-black" : "text-slate-700"
@@ -42,15 +46,15 @@ function Header() {
           Logo
         </h1>
 
-        {/* Botón de menú móvil */}
+        {/* Menú hamburguesa */}
         <button
           className="text-2xl md:hidden transition-colors duration-300 text-slate-700"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <FaBars />
+          {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
 
-        {/* Menú de navegación (solo en desktop) */}
+        {/* Menú en desktop */}
         <nav className="hidden md:flex items-center gap-8">
           {menuItems.map((item, index) => (
             <a
@@ -65,11 +69,10 @@ function Header() {
               {item}
             </a>
           ))}
-          {/* Carrito en desktop */}
           <div className="relative hidden md:block">
             <FaShoppingCart
               className="text-2xl cursor-pointer text-slate-700"
-              onClick={() => setCartCount(cartCount + 1)}
+              onClick={onCartClick}
             />
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
@@ -80,32 +83,34 @@ function Header() {
         </nav>
       </div>
 
-      {/* Menú móvil (incluye carrito de compras) */}
+      {/* Menú desplegable en mobile */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
             transition={{ duration: 0.3 }}
-            className="absolute top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center gap-6 text-lg shadow-md md:hidden"
+            className="fixed top-0 left-0 w-2/3 h-full bg-white shadow-md p-6 flex flex-col gap-6 z-50"
           >
             {menuItems.map((item, index) => (
               <a
                 key={index}
                 href="#"
-                className="text-xl font-semibold text-black hover:text-blue-600 transition"
+                className="text-lg font-semibold text-black hover:text-blue-600"
                 onClick={() => setMenuOpen(false)}
               >
                 {item}
               </a>
             ))}
 
-            {/* Carrito dentro del menú móvil */}
-            <div className="relative mt-4">
+            <div className="relative">
               <FaShoppingCart
-                className="text-3xl cursor-pointer text-black"
-                onClick={() => setCartCount(cartCount + 1)}
+                className="text-2xl cursor-pointer text-slate-700"
+                onClick={() => {
+                  setMenuOpen(false);
+                  onCartClick();
+                }}
               />
               {cartCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
@@ -113,13 +118,6 @@ function Header() {
                 </span>
               )}
             </div>
-
-            <button
-              className="mt-6 text-gray-600 text-lg"
-              onClick={() => setMenuOpen(false)}
-            >
-              Cerrar
-            </button>
           </motion.div>
         )}
       </AnimatePresence>
