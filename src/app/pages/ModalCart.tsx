@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 
@@ -20,8 +21,16 @@ const ModalCart = ({
   setCart: React.Dispatch<React.SetStateAction<Product[]>>;
   onClose: () => void;
 }) => {
+  const router = useRouter();
+
   const handleRemove = (index: number) => {
     setCart(cart.filter((_, i) => i !== index));
+  };
+
+  const handlePay = () => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    onClose(); // Cierra el modal
+    router.push("/pay"); // Redirige a la página de pago
   };
 
   return (
@@ -58,7 +67,7 @@ const ModalCart = ({
                   />
                   <div>
                     <h3 className="text-lg font-semibold">{product.title}</h3>
-                    <p className="text-gray-600">{product.price}</p>
+                    <p className="text-gray-600">${product.price}</p>
                   </div>
                 </div>
                 <button
@@ -72,12 +81,14 @@ const ModalCart = ({
           </div>
         )}
 
-        <button
-          onClick={onClose}
-          className="mt-6 w-full py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-        >
-          Cerrar
-        </button>
+        {cart.length > 0 && (
+          <button
+            onClick={handlePay}
+            className="mt-6 w-full py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+          >
+            Pagar
+          </button>
+        )}
       </motion.div>
     </motion.div>
   );

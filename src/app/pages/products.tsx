@@ -6,7 +6,7 @@ import listProducts from "@/app/components/products"; // Importamos la lista de 
 interface Product {
   id: string;
   title: string;
-  price: string;
+  price: number;
   image: string;
   link: string;
   popular: boolean;
@@ -57,11 +57,10 @@ const Products = ({
                 className="w-[250px] h-[250px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"
               />
               <h2 className="text-slate-700 font-semibold">{product.title}</h2>
-              <p className="text-emerald-400 font-semibold">{product.price}</p>
-
+              <p className="text-emerald-400 font-semibold">${product.price}</p>
               {/* Botón para seleccionar el producto */}
               <button
-                onClick={() => handleSelectProduct(product)} // Al hacer click, seleccionamos el producto
+                onClick={() => handleSelectProduct(product)}
                 className="mt-4 bg-emerald-500 text-white py-2 px-6 rounded-md hover:bg-emerald-600 transition"
               >
                 Select Product
@@ -84,7 +83,7 @@ const Products = ({
               className="w-full h-[250px] object-cover mt-4"
             />
             <p className="text-emerald-400 font-semibold mt-4">
-              {selectedProduct.price}
+              ${selectedProduct.price}
             </p>
 
             {/* Select para elegir cantidad */}
