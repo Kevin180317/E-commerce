@@ -13,7 +13,7 @@ function Hero() {
             className="w-screen h-screen "
           />
         </div>
-        <div className="absolute h-screen flex flex-col items-baseline justify-center mx-64 max-w-2xl gap-8">
+        <div className="absolute h-screen flex flex-col items-baseline justify-center ml-80 max-w-2xl gap-8">
           <h1 className="text-5xl text-slate-700 font-bold ">
             Medicia Medical Service
           </h1>

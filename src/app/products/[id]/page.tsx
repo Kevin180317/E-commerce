@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import products from "@/app/components/products";
 import Image from "next/image";
 import { Tabs, Tab } from "@heroui/tabs";
+import Header from "@/app/pages/header";
 
 const ProductPage: React.FC = () => {
   const { id } = useParams();
@@ -27,9 +28,10 @@ const ProductPage: React.FC = () => {
 
   return (
     <div>
+      <Header />
       {selectedProduct ? (
         <>
-          <div className="flex flex-col md:flex-row items-center h-screen">
+          <div className="flex flex-col md:flex-row items-center h-screen text-slate-800 bg-slate-100">
             <div className="flex-1 py-8 px-32">
               {" "}
               <Image

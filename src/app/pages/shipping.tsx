@@ -2,8 +2,8 @@ import React from "react";
 
 function Shipping() {
   return (
-    <section className="text-slate-700 flex items-center justify-center p-8">
-      <div className="flex items-center justify-center gap-6 p-8">
+    <section className="text-slate-700 flex items-center justify-center px-80 py-8">
+      <div className="flex items-center justify-start gap-6 ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

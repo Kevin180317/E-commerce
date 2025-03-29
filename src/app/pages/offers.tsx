@@ -5,8 +5,8 @@ import Link from "next/link";
 function Offers() {
   return (
     <section className="w-screen h-screen bg-slate-200">
-      <div className="px-64 flex flex-col items-center justify-center h-full">
-        <div className="grid grid-cols-3 grid-rows-2 gap-8">
+      <div className="px-80 flex flex-col items-center justify-center h-full">
+        <div className="grid grid-cols-3 grid-rows-2 gap-8 w-full h-auto">
           <div className="row-span-2 relative overflow-hidden">
             <img
               src="https://www.marveltheme.com/tf/html/medicia/assets/images/promotion/img_1.jpg"
@@ -60,7 +60,7 @@ function Offers() {
                 Thermometer
               </p>
               <Link
-                href=""
+                href="/products/product1"
                 className=" text-slate-700 rounded-xl text-lg font-semibold pt-4 underline underline-offset-8 hover:text-emerald-400"
               >
                 Visit Store

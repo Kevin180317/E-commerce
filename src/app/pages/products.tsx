@@ -9,25 +9,27 @@ import { FaArrowRight } from "react-icons/fa";
 import { div, section } from "motion/react-client";
 const Products = () => {
   return (
-    <section className="flex flex-col items-center justify-center p-8">
+    <section className="flex flex-col items-center justify-center px-64 py-8">
       <h1 className="text-slate-700 text-3xl font-bold pb-6">
         Popular Products
       </h1>
-      <p className="text-slate-700">
+      <p className="text-slate-700 mb-8">
         Shopping Over $59 or first purchase you will get 100% free shipping
       </p>
-      <div className="grid grid-cols-4 px-8 py-4 gap-8">
+      <div className="grid grid-cols-4 px-8 py-4 gap-8 w-full h-auto">
         {products.map((product, id) =>
           product.popular ? (
             <div
               key={id}
               className="flex flex-col items-center justify-center gap-6"
             >
-              <img
-                src={product.image}
-                alt=""
-                className="w-[250] h-[250] object-cover"
-              />
+              <Link href="">
+                <img
+                  src={product.image}
+                  alt=""
+                  className="w-[250] h-[250] object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+                />
+              </Link>
               <h2 className="text-slate-700 font-semibold">{product.title}</h2>
               <p className="text-emerald-400 font-semibold">{product.price}</p>
             </div>
