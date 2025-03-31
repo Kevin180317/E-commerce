@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import listProducts from "@/app/components/products"; // Importamos la lista de productos
+import toast, { Toaster } from "react-hot-toast";
 
 interface Product {
   id: string;
@@ -32,6 +33,7 @@ const Products = ({
     if (selectedProduct) {
       onAddToCart(selectedProduct, quantity); // Agregamos el producto con la cantidad seleccionada al carrito
       setSelectedProduct(null); // Cerramos el detalle del producto
+      toast.success("Producto agregado al carrito");
     }
   };
 
@@ -123,6 +125,7 @@ const Products = ({
           </div>
         </div>
       )}
+      <Toaster position="top-right" />
     </section>
   );
 };
