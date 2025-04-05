@@ -4,13 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
-
-interface Product {
-  id: string;
-  title: string;
-  price: string;
-  image: string;
-}
+import { Product } from "@/app/types"; // ✅
 
 const ModalCart = ({
   cart,

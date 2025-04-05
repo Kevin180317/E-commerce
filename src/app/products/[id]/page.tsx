@@ -28,7 +28,6 @@ const ProductPage: React.FC = () => {
 
   return (
     <div>
-      <Header />
       {selectedProduct ? (
         <>
           <div className="flex flex-col md:flex-row items-center h-screen text-slate-800 bg-slate-100">

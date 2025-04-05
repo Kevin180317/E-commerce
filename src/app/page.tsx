@@ -7,13 +7,7 @@ import Hero from "./pages/hero";
 import Offers from "./pages/offers";
 import Shipping from "./pages/shipping";
 import ModalCart from "./pages/ModalCart";
-
-interface Product {
-  id: string;
-  title: string;
-  price: string;
-  image: string;
-}
+import { Product } from "@/app/types"; // Ajusta la ruta según tu estructura
 
 const Page = () => {
   const [cart, setCart] = useState<Product[]>([]);

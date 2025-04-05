@@ -4,14 +4,7 @@ import React, { useState } from "react";
 import listProducts from "@/app/components/products"; // Importamos la lista de productos
 import toast, { Toaster } from "react-hot-toast";
 
-interface Product {
-  id: string;
-  title: string;
-  price: number;
-  image: string;
-  link: string;
-  popular: boolean;
-}
+import { Product } from "@/app/types"; // Ajusta la ruta según tu estructura
 
 const Products = ({
   onAddToCart,
