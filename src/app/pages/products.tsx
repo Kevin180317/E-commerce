@@ -38,7 +38,7 @@ const Products = ({
   };
 
   return (
-    <section className="flex flex-col items-center justify-center px-64 py-8">
+    <section className="flex flex-col items-center justify-center mx-16 lg:mx-32 xl:mx-64 py-8">
       <h1 className="text-slate-700 text-3xl font-bold pb-6">
         Popular Products
       </h1>
@@ -46,7 +46,7 @@ const Products = ({
         Shopping Over $59 or first purchase you will get 100% free shipping
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 py-4 gap-10 w-full h-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-4 gap-10 w-full h-auto">
         {listProducts.map((product) =>
           product.popular ? (
             <div
@@ -58,8 +58,12 @@ const Products = ({
                 alt={product.title}
                 className="w-[250px] h-[250px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"
               />
-              <h2 className="text-slate-700 font-semibold">{product.title}</h2>
-              <p className="text-emerald-400 font-semibold">${product.price}</p>
+              <h2 className="text-slate-700 font-semibold text-center text-nowrap">
+                {product.title}
+              </h2>
+              <p className="text-emerald-400 font-semibold text-center">
+                ${product.price}
+              </p>
               {/* Botón para seleccionar el producto */}
               <button
                 onClick={() => handleSelectProduct(product)}

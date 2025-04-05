@@ -3,8 +3,8 @@ import React from "react";
 function Shipping() {
   return (
     <section className="flex flex-col text-slate-700">
-      <div className="md:flex justify-between md:px-64 py-8 gap-8">
-        <div className="flex items-center justify-start gap-6 max-w-96">
+      <div className="flex flex-col justify-center md:flex-row md:justify-between mx-16 lg:mx-32 xl:mx-64 py-8 gap-8">
+        <div className="flex items-center justify-center gap-6 max-w-96">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
